@@ -1,3 +1,31 @@
-- name: print frontend
-  ansible.builtin.debug:
-    msg: frontend
+- name: Install nginx
+  ansible.builtin.yum:
+    name: nginx
+    state: installed
+
+- name: Download and extract nginx
+  include_role:
+    name: common
+    tasks_from: download
+- name: clean old html content
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    state: absent
+
+- name: copy the frontend content to nginx path
+  ansible.builtin.copy:
+    src: /tmp/frontend-main/static/
+    dest: /usr/share/nginx/html/
+    remote_src: yes
+
+
+- name: copy roboshop configuration
+  ansible.builtin.copy:
+    src: roboshop.conf
+    dest: /etc/nginx/default.d/roboshop.conf
+
+- name: start service
+  ansible.builtin.systemd:
+    name: nginx
+    state: restarted
+    enabled: yes
