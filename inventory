@@ -8,3 +8,5 @@ catalogue.roboshop.internal
 redis.roboshop.internal
 [USER]
 usser.roboshop.internal
+[CART]
+caart.roboshop.internal
