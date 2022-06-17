@@ -10,7 +10,7 @@
   ansible.builtin.systemd:
     name: mysqld
     state: started
-    enabled:yes
+    enabled: yes
 - name: check the password by collecting information
   community.mysql.mysql_info:
     login_user: root
