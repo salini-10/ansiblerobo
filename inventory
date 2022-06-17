@@ -6,4 +6,6 @@ mongodb.roboshop.internal
 catalogue.roboshop.internal
 [REDIS]
 redis.roboshop.internal
+[USER]
+user.roboshop.internal
 
