@@ -1,4 +1,0 @@
-- name: Nodejs app setup
-  include_role:
-    name: common
-    tasks_from: nodejs
