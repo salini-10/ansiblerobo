@@ -18,6 +18,7 @@
     login_user: root
     login_password: RoboShop@1
   ignore_errors: yes
+  register: mysql_stat
 - name: reset password
   debug:
-    msg: resetting the password
+    msg: "{{mysql_stat}}"
