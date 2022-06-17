@@ -17,6 +17,7 @@
   community.mysql.mysql_info:
     login_user: root
     login_password: RoboShop@1
+  ignore_errors: yes
 - name: reset password
   debug:
     msg: resetting the password
