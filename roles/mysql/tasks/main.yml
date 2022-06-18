@@ -56,5 +56,5 @@
         dest: /tmp/pass-validate.sql
 
     - name: unisntall plugin
-      ansible.builtin.shell: mysql --connect-expired-pasword -uroot -pRoboShop@1 </tmp/pass-validate.sql
+      ansible.builtin.shell: mysql --connect-expired-password -uroot -pRoboShop@1 </tmp/pass-validate.sql
 
