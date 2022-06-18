@@ -1,6 +1,6 @@
 - name: task on conditions
   hosts: localhost
-    vars:
+  vars:
       a: abc
   tasks:
     - name: condiiton on strings
