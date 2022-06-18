@@ -11,6 +11,10 @@
       debug:
         msg: string condition is false
       when: a != "abc"
+    - name: number1
+      debug:
+        msg: both numbers are equal
+      when: b==10
 
     - name: number2
       debug:
