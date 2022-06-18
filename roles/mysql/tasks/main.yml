@@ -48,7 +48,7 @@
   ignore_errors: yes
 
 - name: uninstall validate plugin
-  when: PLUGIN_RC == 0
+  when: PLUGIN_INFO.RC == 0
   block:
     - name: copy sql file to uninstall plugin
       ansible.builtin.copy:
