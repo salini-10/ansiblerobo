@@ -17,7 +17,13 @@
     name: mysqld
     state: started
     enabled: yes
+
 - name: check the DB password by collecting information
   community.mysql.mysql_info:
     login_user: root
     login_password: RoboShop@1
+  ignore_errors: yes
+  register: mysql_stat
+- name: debug
+  debug:
+    msg: '{{mysql_stat}}'
