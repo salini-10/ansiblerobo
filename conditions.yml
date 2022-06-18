@@ -1,0 +1,13 @@
+- name: task on conditions
+  hosts: localhost
+    vars:
+      a: abc
+  tasks:
+    - name: condiiton on strings
+      debug:
+        msg: string condition is true
+      when: a == "abc"
+    - name: condition on strings1
+      debug:
+        msg: string condition is true
+      when: a != "abc"
