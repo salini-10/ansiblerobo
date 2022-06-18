@@ -11,3 +11,9 @@
       debug:
         msg: string condition is false
       when: a != "abc"
+
+    - name: number2
+      debug:
+        msg: b is less than 20
+      when:  b < 20
+
