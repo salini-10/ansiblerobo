@@ -14,7 +14,7 @@
     - name: number1
       debug:
         msg: both numbers are equal
-      when: b==10
+      when: b == 10
 
     - name: number2
       debug:
