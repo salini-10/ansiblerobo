@@ -9,5 +9,5 @@
       when: a == "abc"
     - name: condition on strings1
       debug:
-        msg: string condition is true
+        msg: string condition is false
       when: a != "abc"
