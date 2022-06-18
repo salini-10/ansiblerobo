@@ -1,1 +1,0 @@
-SET PASSWORD FOR 'root'@'localhost' = password('RoboShop@1');
