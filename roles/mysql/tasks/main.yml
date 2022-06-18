@@ -24,6 +24,12 @@
     login_password: RoboShop@1
   ignore_errors: yes
   register: mysql_stat
-- name: reset password
-  debug:
-    msg: "{{mysql_stat}}"
+
+- name: grab default password of MYSQL
+  when: mysql_stat.failed
+  ansible.builtin.shell: grep 'temporary password' /var/log/mysqld.log | awk '{print $NF}'
+  register: DEFAULT_ROOT_PASSWORD
+
+- name: reset MYSQL password
+  when: mysql_stat.failed
+  ansible.builtin.shell: mysql --connect-expired-password -uroot -p"{{DEFAULT_ROOT_PASSWORD.stdout}}" </tmp/rootpass.sql
