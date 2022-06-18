@@ -47,7 +47,7 @@
   register: PLUGIN_INFO
   ignore_errors: yes
 
-- name: uninstall validate plugin
+- name: uninstall password validate plugin
   when: PLUGIN_INFO.rc == 0
   block:
     - name: copy sql file to uninstall plugin
