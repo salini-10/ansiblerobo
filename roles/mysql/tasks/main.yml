@@ -35,7 +35,7 @@
     - name: copy the sql password reset file
       ansible.builtin.copy:
       src: rootpass.sql
-      dest: /tmp/rootpass.sq
+      dest: /tmp/rootpass.sql
 
 
     - name: reset MYSQL password
