@@ -7,7 +7,7 @@
       - gcc-c++
     state: installed
 
-- name: download and extract content {{COMPONENT}}
+- name: set up app user, download and extract content {{COMPONENT}}
   include_role:
     name: common
     tasks_from: download
