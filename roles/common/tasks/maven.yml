@@ -22,9 +22,9 @@
     remote_src: yes
 
 - name: make maven package
-  ansible.builtin.shell: mvn clean package && mv target/shipping-1.0.jar shipping.jar
+  ansible.builtin.shell: mvn clean package  && mv target/shipping-1.0.jar shipping.jar
   args:
-    chdir: /home/roboshop/{{COMPONENT}}
+   chdir: /home/roboshop/{{COMPONENT}}
   become_user: roboshop
 
 - name: setup systemD file
