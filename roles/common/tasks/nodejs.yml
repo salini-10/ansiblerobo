@@ -18,16 +18,8 @@
     path: /home/roboshop/{{COMPONENT}}
   become_user: roboshop
 
-- name: copy systemD file
-  ansible.builtin.copy:
-    src: systemd.service
-    dest: /etc/systemd/system/{{COMPONENT}}.service
-
-- name: start user service
-  ansible.builtin.systemd:
-    name: "{{COMPONENT}}"
-    state: restarted
-    enabled: yes
-    daemon_reload: yes
-
+- name: setup systemD file
+  include_role:
+    name: common
+    tasks_from: systemd
 
