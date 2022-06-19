@@ -1,6 +1,7 @@
 - name: install Maven
   ansible.builtin.yum:
-    name: maven
+    name:
+     - maven
     state: installed
 - name: adding application user
   ansible.builtin.user:
