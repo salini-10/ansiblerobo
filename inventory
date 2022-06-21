@@ -4,8 +4,7 @@ frontend.roboshop.internal
 mongodb.roboshop.internal
 [CATALOGUE]
 catalogue.roboshop.internal
-[REDIS]
-redis.roboshop.internal
+
 [USER]
 user.roboshop.internal
 [CART]
