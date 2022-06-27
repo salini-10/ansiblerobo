@@ -27,6 +27,12 @@
     regexp: '^uid'
     line: uid = {{APP_USER_REGISTER.uid}}
 
+- name: update group id in app configuration
+  ansible.builtin.lineinfile:
+    path: /home/roboshop/{{COMPONENT}}/{{COMPONENT}}.ini
+    regexp: '^gid'
+    line: gid = {{APP_USER_REGISTER.group}}
+
 - name: setup systemd
   include_role:
     name: common
