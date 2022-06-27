@@ -5,7 +5,7 @@ mongodb.roboshop.internal
 [CATALOGUE]
 catalogue.roboshop.internal
 [REDIS]
-reddis.roboshop.internal
+redis.roboshop.internal
 [USER]
 user.roboshop.internal
 [CART]
