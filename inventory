@@ -16,3 +16,5 @@ sqld.roboshop.internal
 shipping.roboshop.internal
 [RABBITMQ]
 rabbitmq.roboshop.internal
+[PAYMENT]
+payment.roboshop.internal
