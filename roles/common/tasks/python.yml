@@ -4,7 +4,7 @@
       - python36
       - gcc
       - python3-devel
-  state: installed
+    state: installed
 
 - name: setup appuser, download and extract {{COMPONENT}} CONTENT
   include_role:
