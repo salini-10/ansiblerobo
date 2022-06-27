@@ -14,3 +14,5 @@ cart.roboshop.internal
 sqld.roboshop.internal
 [SHIPPING]
 shipping.roboshop.internal
+[RABBITMQ]
+rabbitmq.roboshop.internal
