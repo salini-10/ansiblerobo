@@ -1,0 +1,34 @@
+- name: Install python 3
+  ansible.builtin.yum:
+    name:
+      - python36
+      - gcc
+      - python3-devel
+
+  state: installed
+
+- name: setup appuser, download and extract {{COMPONENT}} CONTENT
+  include_role:
+    name: common
+    tasks_from: download
+
+- name: install python dependencies
+  pip:
+    requirements: /home/roboshop/{{COMPONENT}}/requirements.txt
+    executable: pip3
+
+- name: print
+  debug:
+    msg: "{{APP_USER_REGISTER}}"
+
+
+- name: update user id in app configuration
+  ansible.builtin.lineinfile:
+    path: /home/roboshop/{{COMPONENT}}/{{COMPONENT}}.ini
+    regexp: '^uid'
+    line: uid = {{APP_USER_REGISTER.uid}}
+
+- name: setup systemd
+  include_role:
+    name: common
+    tasks_from: systemd
