@@ -2,6 +2,7 @@
   ansible.builtin.user:
     name: roboshop
     comment: roboshop project application user
+  register: APP_USER_REGISTER
 
 - name: Download and extract {{COMPONENT}}
   ansible.builtin.unarchive:
